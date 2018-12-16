@@ -15,7 +15,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 1003
   # no win64 package for r-shinystan
   skip: true  # [win32]
   rpaths:
