@@ -8,8 +8,6 @@ jobs:
     matrix:
       linux_c_compilergcccxx_compilergxxtarget_platformlinux-64:
         CONFIG: linux_c_compilergcccxx_compilergxxtarget_platformlinux-64
-      linux_c_compilertoolchain_ccxx_compilertoolchain_cxxtarget_platformlinux-64:
-        CONFIG: linux_c_compilertoolchain_ccxx_compilertoolchain_cxxtarget_platformlinux-64
   steps:
   - script: |
       sudo pip install --upgrade pip
