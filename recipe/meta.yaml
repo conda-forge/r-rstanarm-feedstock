@@ -1,4 +1,4 @@
-{% set version = "2.19.3" %}
+{% set version = "2.21.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rstanarm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rstanarm/rstanarm_{{ version }}.tar.gz
-  sha256: 7ae06e19a193f6d1eaa722d893cd004bb5ea6917e1c236ec44ad6dda16c2b23f
+  sha256: 68ca733f246f800cd7f442f8abfd631891556eafd9f736d4ef4a1e37a6faef11
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   # given by the availability of rstan
   skip: true  # [win]
   rpaths:
@@ -76,12 +76,9 @@ test:
 about:
   home: http://discourse.mc-stan.org, http://mc-stan.org/, http://mc-stan.org/rstanarm/
   license: GPL (>= 3)
-  summary: Estimates previously compiled regression models using the 'rstan' package, which provides
-    the R interface to the Stan C++ library for Bayesian estimation. Users specify models
-    via the customary R syntax with a formula and data.frame plus some additional arguments
-    for priors.
+  summary: Estimates previously compiled regression models using the 'rstan' package, which provides the R interface to the Stan C++ library for Bayesian estimation. Users specify models via the customary R syntax with a formula and data.frame plus some additional arguments for priors.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
