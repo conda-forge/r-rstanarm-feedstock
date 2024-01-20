@@ -1,4 +1,4 @@
-{% set version = "2.21.4" %}
+{% set version = "2.32.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rstanarm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rstanarm/rstanarm_{{ version }}.tar.gz
-  sha256: ec6ac623e4bf1d368175d92145ed66e6346bf450790a404aff614c6510f9b185
+  sha256: 5c6d6c6207745d4907d2df98570b5c27a5c360683f97a6bb759d37e43dd243de
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   # given by the availability of rstan
   skip: true  # [win]
   rpaths:
@@ -23,10 +23,10 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -35,36 +35,36 @@ requirements:
   host:
     - r-base
     - r-bh >=1.72.0_2
-    - r-matrix >=1.2_13
-    - r-rcpp >=0.12.0
-    - r-rcppeigen >=0.3.3.3.0
-    - r-rcppparallel >=5.0.1
-    - r-stanheaders >=2.21.0
     - r-bayesplot >=1.7.0
     - r-ggplot2 >=2.2.1
     - r-lme4 >=1.1_8
     - r-loo >=2.1.0
+    - r-matrix >=1.2_13
     - r-nlme >=3.1_124
-    - r-rstan >=2.21.1
+    - r-rcpp >=0.12.0
+    - r-rcppeigen >=0.3.3.3.0
+    - r-rcppparallel >=5.0.1
+    - r-rstan >=2.26.1
     - r-rstantools >=2.1.0
     - r-shinystan >=2.3.0
+    - r-stanheaders >=2.21.0
     - r-survival >=2.40.1
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-matrix >=1.2_13
-    - r-rcpp >=0.12.0
-    - r-rcppeigen >=0.3.3.3.0
-    - r-rcppparallel >=5.0.1
-    - r-stanheaders >=2.21.0
     - r-bayesplot >=1.7.0
     - r-ggplot2 >=2.2.1
     - r-lme4 >=1.1_8
     - r-loo >=2.1.0
+    - r-matrix >=1.2_13
     - r-nlme >=3.1_124
-    - r-rstan >=2.21.1
+    - r-rcpp >=0.12.0
+    - r-rcppeigen >=0.3.3.3.0
+    - r-rcppparallel >=5.0.1
+    - r-rstan >=2.26.1
     - r-rstantools >=2.1.0
     - r-shinystan >=2.3.0
+    - r-stanheaders >=2.21.0
     - r-survival >=2.40.1
 
 test:
@@ -73,7 +73,9 @@ test:
     - "\"%R%\" -e \"library('rstanarm')\""  # [win]
 
 about:
-  home: http://discourse.mc-stan.org, http://mc-stan.org/, http://mc-stan.org/rstanarm/
+  home: http://discourse.mc-stan.org, http://mc-stan.org/
+  dev_url: https://github.com/stan-dev/rstanarm
+  doc_url: http://mc-stan.org/rstanarm/
   license: GPL-3.0-or-later
   summary: Estimates previously compiled regression models using the 'rstan' package, which provides the R interface to the Stan C++ library for Bayesian estimation. Users specify models via the customary R syntax with a formula and data.frame plus some additional arguments for priors.
   license_family: GPL3
