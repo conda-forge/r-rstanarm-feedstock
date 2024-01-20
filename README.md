@@ -7,20 +7,28 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rstanarm-feed
 About r-rstanarm
 ----------------
 
-Home: http://discourse.mc-stan.org, http://mc-stan.org/, http://mc-stan.org/rstanarm/
+Home: http://discourse.mc-stan.org, http://mc-stan.org/
 
 Package license: GPL-3.0-or-later
 
 Summary: Estimates previously compiled regression models using the 'rstan' package, which provides the R interface to the Stan C++ library for Bayesian estimation. Users specify models via the customary R syntax with a formula and data.frame plus some additional arguments for priors.
+
+Development: https://github.com/stan-dev/rstanarm
+
+Documentation: http://mc-stan.org/rstanarm/
 
 About r-rstanarm
 ----------------
 
-Home: http://discourse.mc-stan.org, http://mc-stan.org/, http://mc-stan.org/rstanarm/
+Home: http://discourse.mc-stan.org, http://mc-stan.org/
 
 Package license: GPL-3.0-or-later
 
 Summary: Estimates previously compiled regression models using the 'rstan' package, which provides the R interface to the Stan C++ library for Bayesian estimation. Users specify models via the customary R syntax with a formula and data.frame plus some additional arguments for priors.
+
+Development: https://github.com/stan-dev/rstanarm
+
+Documentation: http://mc-stan.org/rstanarm/
 
 Current build status
 ====================
