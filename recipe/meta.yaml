@@ -19,6 +19,22 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-lme4                     # [build_platform != target_platform]
+    - r-nlme                     # [build_platform != target_platform]
+    - r-rstan                    # [build_platform != target_platform]
+    - r-bayesplot                # [build_platform != target_platform]
+    - r-shinystan                # [build_platform != target_platform]
+    - r-rstantools               # [build_platform != target_platform]
+    - r-ggplot2                  # [build_platform != target_platform]
+    - r-survival                 # [build_platform != target_platform]
+    - r-rcppeigen                # [build_platform != target_platform]
+    - r-rcppparallel             # [build_platform != target_platform]
+    - r-rcpp                     # [build_platform != target_platform]
+    - r-stanheaders              # [build_platform != target_platform]
+    - r-bh                       # [build_platform != target_platform]
+    - r-loo                      # [build_platform != target_platform]
+    - r-matrix                   # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ stdlib('c') }}
