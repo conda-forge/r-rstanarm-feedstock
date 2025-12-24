@@ -27,7 +27,7 @@ requirements:
     - {{ posix }}filesystem        # [win]
     - {{ posix }}grep              # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
+    - {{ posix }}sed
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]

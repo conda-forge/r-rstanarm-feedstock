@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -o xtrace -o nounset -o pipefail -o errexit
 
 export TBB_INC=${PREFIX}/include
 cp ${RECIPE_DIR}/Makevars src
