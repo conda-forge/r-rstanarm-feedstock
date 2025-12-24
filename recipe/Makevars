@@ -1,0 +1,5 @@
+PKG_CPPFLAGS = -I"../inst/include" -I"$$PREFIX/lib/R/library/StanHeaders/include/src" -DBOOST_DISABLE_ASSERTS -DEIGEN_NO_DEBUG -DBOOST_MATH_OVERFLOW_ERROR_POLICY=errno_on_error -DUSE_STANC3 -D_HAS_AUTO_PTR_ETC=0
+PKG_CXXFLAGS = -I'$$PREFIX/lib/R/library/RcppParallel/include' -D_REENTRANT -DSTAN_THREADS -DTBB_INTERFACE_NEW
+PKG_LIBS = -ltbb -ltbbmalloc
+
+CXX_STD = CXX17

@@ -1,4 +1,4 @@
-{% set version = "2.32.1" %}
+{% set version = "2.32.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rstanarm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rstanarm/rstanarm_{{ version }}.tar.gz
-  sha256: 5c6d6c6207745d4907d2df98570b5c27a5c360683f97a6bb759d37e43dd243de
+  sha256: 911647aeb6bdc303a229fb3a1d7d8fa2e8e01a146e0a6a51b6322d41219cd1fc
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,9 +27,25 @@ requirements:
     - {{ posix }}filesystem        # [win]
     - {{ posix }}grep              # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
+    - {{ posix }}sed
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-bh >=1.72.0_2              # [build_platform != target_platform]
+    - r-bayesplot >=1.7.0          # [build_platform != target_platform]
+    - r-ggplot2 >=2.2.1            # [build_platform != target_platform]
+    - r-lme4 >=1.1_8               # [build_platform != target_platform]
+    - r-loo >=2.1.0                # [build_platform != target_platform]
+    - r-matrix >=1.2_13            # [build_platform != target_platform]
+    - r-nlme >=3.1_124             # [build_platform != target_platform]
+    - r-rcpp >=0.12.0              # [build_platform != target_platform]
+    - r-rcppeigen >=0.3.3.3.0      # [build_platform != target_platform]
+    - r-rcppparallel >=5.0.1       # [build_platform != target_platform]
+    - r-rstan >=2.26.1             # [build_platform != target_platform]
+    - r-rstantools >=2.1.0         # [build_platform != target_platform]
+    - r-shinystan >=2.3.0          # [build_platform != target_platform]
+    - r-stanheaders >=2.21.0       # [build_platform != target_platform]
+    - r-survival >=2.40.1          # [build_platform != target_platform]
   host:
     - r-base
     - r-bh >=1.72.0_2
@@ -47,6 +63,7 @@ requirements:
     - r-shinystan >=2.3.0
     - r-stanheaders >=2.21.0
     - r-survival >=2.40.1
+    - tbb-devel                    # [unix]
   run:
     - r-base
     - r-bayesplot >=1.7.0
