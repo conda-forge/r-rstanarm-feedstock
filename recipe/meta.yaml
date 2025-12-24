@@ -63,6 +63,7 @@ requirements:
     - r-shinystan >=2.3.0
     - r-stanheaders >=2.21.0
     - r-survival >=2.40.1
+    - tbb-devel                    # [unix]
   run:
     - r-base
     - r-bayesplot >=1.7.0
