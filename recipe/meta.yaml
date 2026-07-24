@@ -55,36 +55,42 @@ requirements:
     - r-loo >=2.1.0
     - r-matrix >=1.2_13
     - r-nlme >=3.1_124
+    - r-posterior
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
     - r-rcppparallel >=5.0.1
-    - r-rstan >=2.26.1
+    - r-reformulas
+    - r-rstan >=2.32.0
     - r-rstantools >=2.1.0
     - r-shinystan >=2.3.0
-    - r-stanheaders >=2.21.0
+    - r-stanheaders >=2.32.0
     - r-survival >=2.40.1
     - tbb-devel                    # [unix]
   run:
     - r-base
+    - r-bh >=1.72.0_2
     - r-bayesplot >=1.7.0
     - r-ggplot2 >=2.2.1
     - r-lme4 >=1.1_8
     - r-loo >=2.1.0
     - r-matrix >=1.2_13
     - r-nlme >=3.1_124
+    - r-posterior
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
     - r-rcppparallel >=5.0.1
-    - r-rstan >=2.26.1
+    - r-reformulas
+    - r-rstan >=2.32.0
     - r-rstantools >=2.1.0
     - r-shinystan >=2.3.0
-    - r-stanheaders >=2.21.0
+    - r-stanheaders >=2.32.0
     - r-survival >=2.40.1
 
 test:
   requires:
     - r-codetools
     - r-testthat
+    - make
   source_files:
     - tests/
   commands:
