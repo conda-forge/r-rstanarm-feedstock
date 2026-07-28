@@ -94,11 +94,12 @@ test:
   source_files:
     - tests/
   commands:
+    - export CPPFLAGS="${CPPFLAGS} -DTBB_INTERFACE_NEW"                               # [not win]
     - $R -e "library('rstanarm')"                                                     # [not win]
     - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
+    - set CPPFLAGS="%CPPFLAGS% -DTBB_INTERFACE_NEW"                                   # [win]
     - "\"%R%\" -e \"library('rstanarm')\""                                            # [win]
     - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
-    
 
 about:
   home: http://discourse.mc-stan.org, http://mc-stan.org/
